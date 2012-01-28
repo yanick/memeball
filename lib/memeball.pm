@@ -36,4 +36,10 @@ post '/ask' => sub {
 
 };
 
+get '/all' => sub {
+    template 'all', {
+        answers => \%answers,
+    };
+};
+
 true;

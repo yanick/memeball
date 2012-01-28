@@ -1,0 +1,55 @@
+<%args>
+%answers
+</%args>
+<html>
+<head>
+<title>MemeBall</title>
+<script src="/javascripts/jquery.js"></script>
+<script src="/javascripts/raphael-min.js"></script>
+<style>
+body {
+    font-family: Arial, 'sans';
+    width: 800px;
+}
+
+div#the_answer {
+    display: none;
+}
+
+.intro {
+    margin-left: 2em;
+    font-size: 24pt;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.question {
+    font-size: 20pt;
+    font-style: italic;
+    margin-bottom: 1em;
+    margin-left: 3em;
+    width: 400px;
+}
+
+.question:before { content: "''"}
+.question:after { content: "''"}
+
+.another {
+    position: absolute;
+    right: 20px;
+    top: 5px;
+}
+
+</style>
+</head>
+<body>
+<h1>All possible answers</h1>
+
+% for( sort keys %answers ) {
+<h2><% $answers{$_} %></h2>
+<img src="/answers/<% $_ %>" />
+% }
+
+
+</body>
+</html>
