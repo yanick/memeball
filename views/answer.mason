@@ -1,0 +1,94 @@
+<%args>
+$question
+$answer
+$pic
+</%args>
+<html>
+<head>
+<title>MemeBall</title>
+<script src="/javascripts/jquery.js"></script>
+<script src="/javascripts/raphael-min.js"></script>
+<style>
+body {
+    font-family: Arial, 'sans';
+    width: 800px;
+}
+
+div#the_answer {
+    display: none;
+}
+
+.intro {
+    margin-left: 2em;
+    font-size: 24pt;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.question {
+    font-size: 20pt;
+    font-style: italic;
+    margin-bottom: 1em;
+    margin-left: 3em;
+    width: 400px;
+}
+
+.question:before { content: "''"}
+.question:after { content: "''"}
+
+.another {
+    position: absolute;
+    right: 20px;
+    top: 5px;
+}
+
+</style>
+</head>
+<body>
+
+<div id="shaking_the_ball">
+<h1>Shaking the Ball</h1>
+
+<div id="shooka" align="center"></div>
+
+</div>
+
+<script>
+var paper = Raphael( "shooka", 800, 800 );
+
+var shooka = paper.text( 50, 50, "shooka" );
+
+function shake( s ) {
+    if ( s <= 0 ) {
+        $('#shaking_the_ball').hide();
+        $('#the_answer').show();
+        return;
+    }
+
+    shooka.attr('font-size', 16 + Math.floor( 26*Math.random() ) + "pt" );
+    shooka.attr('x', Math.floor( 800*Math.random() ) );
+    shooka.attr('y', Math.floor( 800*Math.random() ) );
+    setTimeout( "shake(" + --s + ")", 1000 );
+}
+
+shake(5);
+
+</script>
+
+<div id="the_answer">
+<div class="intro">the question was:</div>
+
+<div class="question"><% $question %></div>
+
+<div class="intro">And the answer is:</div>
+
+<div align="center">
+<img src="/answers/<% $pic %>" alt="<% $answer %>" />
+</div>
+
+
+<div class="another"><a href="/">ask another question</a></div>
+</div>
+
+</body>
+</html>

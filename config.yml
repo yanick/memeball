@@ -18,7 +18,7 @@ charset: "UTF-8"
 # simple: default and very basic template engine
 # template_toolkit: TT
 
-template: "simple"
+template: "Mason"
 
 # template: "template_toolkit"
 # engines:
@@ -26,4 +26,14 @@ template: "simple"
 #     encoding:  'utf8'
 #     start_tag: '[%'
 #     end_tag:   '%]'
+
+answers:
+    honey-badger.gif: Honey badger doesn't care
+    me_gusta.png: Me Gusta
+    sweet_jesus.png: Sweet Jesus have mercy
+    fuuuuuu.jpg: fuuuuuuuu
+    Wat.jpg: wat
+    oh_god_why.jpg: Oh God, why?
+    challenge_accepted: Challenge accepted
+    fuck_yea.png: Fuck yea
 
